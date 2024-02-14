@@ -4,42 +4,44 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #ffc0cb; /* Fondo rosa */
+    cursor: pointer;
 }
 
-.heart {
-    position: relative;
-    width: 100px;
-    height: 90px;
-    background-color: #e84d5e;
-    transform: rotate(-45deg);
-    animation: beat 1s infinite alternate;
-}
-
-.heart::before,
-.heart::after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: #e84d5e;
-    border-radius: 50%;
-}
-
-.heart::before {
-    top: -50px;
-    left: 0;
-}
-
-.heart::after {
+.overlay {
+    position: fixed;
     top: 0;
-    left: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none; /* Se oculta inicialmente */
 }
 
-@keyframes beat {
-    to {
-        transform: rotate(-45deg) scale(1.1);
-    }
+.envelope {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none; /* Se oculta inicialmente */
 }
 
-/* Agrega más estilos según tus necesidades */
+.hearts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilo adicional para cerrar el sobre */
+.envelope h2 {
+    color: #333;
+}
+
+.envelope p {
+    color: #555;
+    margin-bottom: 0;
+}
